@@ -103,6 +103,9 @@ public class GUI {
             String countryCode = countryConverter.fromCountry(countryName).toLowerCase();
             String languageCode = langConverter.fromLanguage(languageName);
 
+            if (languageCode.equals("Nynorsk\tnn")) {
+                languageCode = "no";
+            }
             String result = translator.translate(countryCode, languageCode);
             if (result == null) {
                 result = "no translation found!";
